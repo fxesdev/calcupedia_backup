@@ -1,0 +1,48 @@
+@font-face {
+  font-family: 'ESPScreen Large';
+  src: url('../../assets/fonts/espscreen_l.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'ESPScreen Small';
+  src: url('../../assets/fonts/espscreen_s.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'ClassWiz X Display';
+  src: url('../../assets/fonts/cwxd.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'ClassWiz CW Display';
+  src: url('../../assets/fonts/cwcwd.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'CASIO MS01';
+  src: url('../../assets/fonts/k_ms.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'ES03';
+  src: url('../../assets/fonts/k_es.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'CASIO ClassWiz';
+  src: url('../../assets/fonts/k_ex.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'CASIO ClassWiz CW02';
+  src: url('../../assets/fonts/k_cw.ttf') format('truetype');
+}
+
+.espl { font-family: 'ESPScreen Large'; }
+.esps { font-family: 'ESPScreen Small'; }
+.cwxd { font-family: 'ClassWiz X Display'; }
+.cwcwd { font-family: 'ClassWiz CW Display'; }
+.k_ms { font-family: 'CASIO MS01'; }
+.k_es { font-family: 'ES03'; }
+.k_ex { font-family: 'CASIO ClassWiz'; }
+.k_cw { font-family: 'CASIO ClassWiz CW02'; }

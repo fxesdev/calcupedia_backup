@@ -1,8 +1,27 @@
-title: Just the Docs Template
-description: A starter template for a Jeykll site using the Just the Docs theme!
+title: Calcupedia Backup
 theme: just-the-docs
+color_scheme: dark
 
-url: https://just-the-docs.github.io
+logo: "/assets/images/logo.png"
+
+kramdown:
+  math_engine: mathjax
 
 aux_links:
-  Template Repository: https://github.com/just-the-docs/just-the-docs-template
+  "GitHub repository": "//github.com/fxesdev/calcupedia_backup"
+
+nav_external_links:
+  - title: Go to the real Calcupedia
+    url: https://gwe.42web.io/calcupedia
+
+nav_sort: case_insensitive
+
+search:
+    rel_url: true
+
+callouts:
+    warning:
+        title: Warning
+        color: red
+    hatnote:
+        color: purple
