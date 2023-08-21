@@ -1,6 +1,7 @@
 title: Calcupedia Backup
 theme: just-the-docs
 color_scheme: dark
+markdown: kramdown
 
 logo: "/assets/images/logo.png"
 

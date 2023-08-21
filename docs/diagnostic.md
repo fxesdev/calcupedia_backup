@@ -750,7 +750,7 @@ Version screens in ES PLUS re-release models (and normal ES PLUS models as well)
 Where:
 - <span class="esps">CY-860</span>: Version.
 - <span class="esps">VerA</span>: Revision.
-- <span class="esps">SUM 940B OK IDOK</span>: Calculated checksum. <span class="esps">OK</span> means the checksum matches the one in the ROM. The exact purpose of the "ID" check is unknown, but it will display <span class="esps">ID--</span> if the checksum was bad.
+- <span class="esps">SUM 940B OK IDOK</span>: Calculated checksum. <span class="esps">OK</span> means the checksum matches the one in the ROM. The exact purpose of the "ID" check is unknown, but it will display <span class="esps">ID-\-</span> if the checksum was bad.
 
 You can verify the version and checksum using the table below.
 
