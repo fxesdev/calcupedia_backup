@@ -126,7 +126,7 @@ Please read the following before doing the guide below:
 11. First, click on the name of the function above the `SetTimer` function call. On the *Listing* tab you'll see a `LAB_00xxxxxx` label. Copy the label.<br>Back to the *Decompile* tab, click on the name of the function above the `AcvFx_ActivationErrorDlg` call. Over on the *Listing* tab a `CALL` instruction will be highlighted. Click anywhere on the instruction and press Ctrl+Shift+G. In the first field, change `CALL` to <span title="Jump no conditions" style="border-bottom:1px dotted"><code>JMP</code></span>. On the second field, delete **everything** and paste in the `LAB_00xxxxxx` label you copied from earlier. Press Enter.
 
 **Exporting the patched EXE**
-12. Press O to bring up the *Export Program* dialog. Select the output as *PE* or *Original File*, and set the output filename to the path to the emulator EXE. You can repeat step 0 to grab the path again (don't create a backup this time, unless you haven't).
+12. Press O to bring up the *Export Program* dialog. Select the output as *PE* or *Original File*, and set the output filename to the path to the emulator EXE. You can repeat step 0[^4] to grab the path again (don't create a backup this time, unless you haven't).
 13. Press *OK*. In the dialog box that appears click *Overwrite*. **Make sure you have saved a backup of the emulator executable!**
 14. Wait for Ghidra to export the EXE. When it's done, a big dialog box will appear. Press Escape to close it. You can now close Ghidra, and delete Ghidra and the project you just made if you want.
 15. Profit!
@@ -377,3 +377,4 @@ This section will (and aims to) contain downloads for all **official** Casio emu
 [^1]: Information taken from Casio's [license recovery](https://edu.casio.com/softwarelicense/activation_licenserecovery) page.
 [^2]: This code change is to prevent a `0xF0000005` error (*Connection to the server where the CASIO Network License Server is running failed.*) which will close the emulator immediately if it gets triggered.
 [^3]: Known to exist from [this image](https://edu.casio.com/assets/images/softwarelicense/importantinformation/ja/img04.png).
+[^4]: [Extra note] the "Copying the emulator EXE path" step.
