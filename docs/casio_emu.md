@@ -21,7 +21,7 @@ Over the years, [Casio](https://wikipedia.org/wiki/Casio) has made emulators of 
 
 ## Emulator subscriptions
 ### What is currently known ###
-If you have started a trial period, downloading another evaluation emulator would actually use the same trial period. For example, if you have opened an evaluation Casio fx-570/991EX emulator and used it for a day, downloading and opening a [[Casio fx-580VN X]] evaluation emulator will show that you have 89 days left before a license is required. Uninstalling will not affect anything. This is because the trial license actually uses the same application name and version, therefore it is treated as one single application.
+If you have started a trial period, downloading another evaluation emulator would actually use the same trial period. For example, if you have opened an evaluation Casio fx-570/991EX emulator and used it for a day, downloading and opening a Casio fx-580VN X evaluation emulator will show that you have 89 days left before a license is required. Uninstalling will not affect anything. This is because the trial license actually uses the same application name and version, therefore it is treated as one single application.
 
 Casio uses SafeNet Sentinel technology as the license system. You can see this by going to `C:\ProgramData` (`ProgramData` is a system folder), where you will see a folder titled `SafeNet Sentinel`. The official guide to set up a network server made by Casio also tells you to download "Sentinel RMS License Manager". Not much is known about this SafeNet Sentinel technology, other than the fact that it definitely was secure *for the average user*.
 
