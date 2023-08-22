@@ -70,66 +70,22 @@ This guide below uses [Ghidra](https://wikipedia.org/wiki/Ghidra), an open-sourc
 Please read the following before doing the guide below:
 - This guide is only recommended if you need to install 1 or 2 emulators so you can use them as long as you want, because this guide takes, at minimum, around **20 minutes** to do. A majority of that time is spent waiting for auto-analyzation to finish, and the auto-analyzation time can change depending on your computer's speed.
 - The guide applies to the latest ClassWiz (EX) emulator version (02.01.0030.0000) and the latest fx-ES PLUS re-release emulator version (05.00.0020.0000) as of writing this article.
-- The guide uses the fx-580VN X emulator (version 02.01.0020.0000) as an example. Every emulator EXE is different but has the same code recompiled (if the version is the same), so `FUN_xxxxxxxx` function names may be slightly different for you, but everything else should stay the same.
 - While the guide uses Ghidra, you can use any reverse-engineering tool to patch the EXE and bypass the activation process.
 
-**Copying the emulator EXE path** (well duh...)
-0. Navigate to where the emulator you want to patch is installed. Create a backup of the executable. Then copy the EXE's path (on Windows: click on the *original* (not the backup) emulator EXE, right-click and select *Copy as path*.)
-
-**Setting up**
-1. [Download Ghidra](https://github.com/NationalSecurityAgency/ghidra/releases/latest).
-2. Open Ghidra and create a new project (name it whatever you want).
-3. In the newly created project, press I to bring up an *Import File* window. In the *File name* field, paste the path to the emulator EXE that you copied from earlier. Click on *Select File To Import*, then click OK. Wait for the file to import.
-4. Double-click on the file you just imported to open the file with the *Code Browser*.
-5. Click *Yes* when you are prompted to analyze the file. Then in the window that appears click *Analyze*. Wait for the auto-analyzation to finish. You can look at the bottom right of the *Code Browser*, and if you see no progress bar, auto-analyzation is done, and you can move on.
-
-**Patch 1/2 -- Patching the activation dialog**
-6. After auto-analyzation is done, in the *Symbol Tree* tab, click on *Imports* > `ACTIVATIONFX.DLL`, then click on `AcvFx_IsActivationDialog2` and press Ctrl+Shift+F to show references to the function. Select the first reference and close the window.
-7. Look at the *Decompile* tab. You should see decompiled C code that looks something like this:
-```c
-      // ...
-      iVar3 = FUN_004cc580(local_30e0);
-      if (iVar3 != 0) {
-        cVar1 = AcvFx_IsActivationDialog2(local_30e0,0xffffffff,1);
-        if (cVar1 != '\0') {
-          memcpy(local_1408,local_30e0,0x1364);
-          -(undefined4 --)(param_1 + 0x20) = local_1d78;
-          Ordinal_3627();
-        }
-        // ...
-```
-8. First, click on `memcpy`. The Listing tab will highlight a `CALL` instruction. Now above that instruction are some `PUSH` instructions; find one that comes right after a <span title="Jump if zero" style="border-bottom:1px dotted"><code>JZ</code></span> instruction. On the very left you'll see the instruction address; highlight and copy it.
-9. Now go back to the *Decompile* tab and click on the `if` in `if (iVar3 != 0)`. The *Listing* tab will highlight a <span title="Jump if zero" style="border-bottom:1px dotted"><code>JZ</code></span> instruction. Click anywhere on the instruction, then press Ctrl+Shift+G to begin patching the instruction. A dialog box will appear, press OK, and wait for Ghidra to construct an assembler.<br>When it's done, you will see two fields. In the first field, change <span title="Jump if zero" style="border-bottom:1px dotted"><code>JZ</code></span> to <span title="Jump no conditions" style="border-bottom:1px dotted"><code>JMP</code></span>. On the second field, highlight the letters and numbers after `0x`, then paste the address you copied from earlier. Press Enter, and you should be left with a `JMP LAB_00xxxxxx` instruction.
-
-**Patch 2/2 -- Patching a license server check**[^2]
-10. Now return to the *Symbol Tree* tab, select `AcvFx_GetPropertyPage2`, Ctrl+Shift+F, select the first reference and close the window. Now in the *Decompile* tab, scroll down. You should find some code looking something like this:
-```c
-      // ...
-      FUN_004c7fe0();
-      AcvFx_ActivationErrorDlg(local_136c,1,param_1);
-      piVar2 = (int -)Ordinal_1944();
-      if (piVar2 == (int -)0x0) {
-        iVar3 = 0;
-      }
-      else {
-        iVar3 = (--(code --)(-piVar2 + 0x7c))();
-      }
-      PostMessageW(-(HWND -)(iVar3 + 0x20),0x10,0,0);
-    }
-  }
-  FUN_004cb6e0();
-  SetTimer(-(HWND -)(param_1 + 0x20),1,240000,(TIMERPROC)0x0);
-  @__security_check_cookie@4(local_8 ^ (uint)&stack0xfffffffc);
-  return;
-}
-```
-11. First, click on the name of the function above the `SetTimer` function call. On the *Listing* tab you'll see a `LAB_00xxxxxx` label. Copy the label.<br>Back to the *Decompile* tab, click on the name of the function above the `AcvFx_ActivationErrorDlg` call. Over on the *Listing* tab a `CALL` instruction will be highlighted. Click anywhere on the instruction and press Ctrl+Shift+G. In the first field, change `CALL` to <span title="Jump no conditions" style="border-bottom:1px dotted"><code>JMP</code></span>. On the second field, delete **everything** and paste in the `LAB_00xxxxxx` label you copied from earlier. Press Enter.
-
-**Exporting the patched EXE**
-12. Press O to bring up the *Export Program* dialog. Select the output as *PE* or *Original File*, and set the output filename to the path to the emulator EXE. You can repeat step 0[^4] to grab the path again (don't create a backup this time, unless you haven't).
-13. Press *OK*. In the dialog box that appears click *Overwrite*. **Make sure you have saved a backup of the emulator executable!**
-14. Wait for Ghidra to export the EXE. When it's done, a big dialog box will appear. Press Escape to close it. You can now close Ghidra, and delete Ghidra and the project you just made if you want.
-15. Profit!
+1. Navigate to where the emulator you want to patch is installed. Create a backup of the DLL `ActivationFx.dll`, then copy its path (on Windows: click on the *original* (not the backup) `ActivationFx.dll`, right-click and select *Copy as path*.)
+2. [Download Ghidra](https://github.com/NationalSecurityAgency/ghidra/releases/latest).
+3. Open Ghidra and create a new project (name it whatever you want).
+4. In the newly created project, press I to bring up an *Import File* window. In the *File name* field, paste the path to `ActivationFx.dll` that you copied from earlier. Click on *Select File To Import*, then click OK. Wait for the file to import.
+5. Double-click on the file you just imported to open the file with the *Code Browser*.
+6. Click *Yes* when you are prompted to analyze the file. Then in the window that appears click *Analyze*. Wait for the auto-analyzation to finish. You can look at the bottom right of the *Code Browser*, and if you see no progress bar, auto-analyzation is done, and you can move on.
+7. After auto-analyzation is done, in the *Symbol Tree* tab, click on *Functions* > `AcvFx_` > `AcvFx_IsActivationDialog2`.
+8. Look at the Decompile tab. You should see some C code. Click on the very first line in the function. Press Ctrl+Shift+G, close the window that pops up, and wait for Ghidra to construct an assembler.
+9. When done, you'll see two fields. Make sure the first field is `MOV` and the second field is `EAX, 0x1`. Press Enter.
+10. Under the instruction you patched is a hex byte. Select it and Ctrl+Shift+G again. Now make sure the first field is `RET` and the second field is `0xc`. Press Enter.
+11. Press O to bring up the *Export Program* dialog. Select the output as *PE* or *Original File*, and set the output filename to the path to `ActivationFx.dll`. You can repeat step 1 to grab the path again (don't create a backup this time, unless you haven't).
+12. Press *OK*. In the dialog box that appears click *Overwrite*. **Make sure you have saved a backup of `ActivationFx.dll`!**
+13. Wait for Ghidra to export the EXE. When it's done, a big dialog box will appear. Press Escape to close it. You can now close Ghidra, and delete Ghidra and the project you just made if you want.
+14. Profit!
 
 Now, when starting the patched emulator, no activation dialogs will appear, even if the trial period has expired or has been invalidated.
 
