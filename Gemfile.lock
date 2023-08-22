@@ -10,7 +10,6 @@ GEM
       http_parser.rb (~> 0)
     eventmachine (1.2.7)
     ffi (1.15.5)
-    ffi (1.15.5-x64-mingw-ucrt)
     forwardable-extended (2.6.0)
     google-protobuf (3.24.1-x64-mingw-ucrt)
     google-protobuf (3.24.1-x86_64-linux)
@@ -33,14 +32,17 @@ GEM
       safe_yaml (~> 1.0)
       terminal-table (>= 1.8, < 4.0)
       webrick (~> 1.7)
+    jekyll-include-cache (0.2.1)
+      jekyll (>= 3.7, < 5.0)
     jekyll-sass-converter (3.0.0)
       sass-embedded (~> 1.54)
     jekyll-seo-tag (2.8.0)
       jekyll (>= 3.8, < 5.0)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
-    just-the-docs (0.5.4)
+    just-the-docs (0.6.0)
       jekyll (>= 3.8.5)
+      jekyll-include-cache
       jekyll-seo-tag (>= 2.0)
       rake (>= 12.3.1)
     kramdown (2.4.0)
@@ -77,7 +79,7 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll (~> 4.3.2)
-  just-the-docs (= 0.5.4)
+  just-the-docs
 
 BUNDLED WITH
    2.3.26
