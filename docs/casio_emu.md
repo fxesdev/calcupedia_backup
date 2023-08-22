@@ -41,8 +41,8 @@ The basic steps to do this with Windows Sandbox are:
 
 This method is easy to perform, but is very slow, and very frustrating because you have to set up the sandbox every time. Some have worked around this by preparing a folder with all the required software and simply copying it to the sandbox, however it is still very frustrating. This method is only recommended if you are perfectly okay with setting up a sandbox multiple times, or if you need to mass-install a lot of emulators and don't need them much.
 
-#### Modifying the emulator EXE
-The harder but more efficient way to bypass activation is to patch the emulator's executable to run the main emulator code no matter what. This way, you do not need a sandbox environment.
+#### Modifying the emulator code
+The harder but more efficient way to bypass activation is to patch the emulator to run the main emulator code no matter what. This way, you do not need a sandbox environment.
 
 ##### Pre-patched versions
 If you search hard enough, you can find pre-patched/cracked versions of these emulators. However, these cracks usually don't use the latest version.
@@ -62,14 +62,14 @@ If you search for "QLam Xmaster", eventually you'll find two more versions of th
 Both of these versions are also linked [below](#downloads).
 
 ##### DIY patching
-Since it's very hard to find cracked versions of these emulators, you probably need to patch the EXE yourself.
+Since it's very hard to find cracked versions of these emulators, you probably need to patch it yourself.
 
-This guide below uses [Ghidra](https://wikipedia.org/wiki/Ghidra), an open-source reverse-engineering tool developed by the [National Security Agency](https://wikipedia.org/wiki/National_Security_Agency) of the United States, to patch an emulator EXE to bypass activation.<br>
+This guide below uses [Ghidra](https://wikipedia.org/wiki/Ghidra), an open-source reverse-engineering tool developed by the [National Security Agency](https://wikipedia.org/wiki/National_Security_Agency) of the United States, to patch the DLL file `ActivationFx.dll` to bypass activation.<br>
 <span class="text-red-300"><u><b>DISCLAIMER:</b></u> Casio's emulators are **[proprietary software](https://wikipedia.org/wiki/Proprietary_software)**. If your country bans [piracy](https://wikipedia.org/wiki/Piracy), please **do not** follow the guide below if you haven't legally purchased a license. The guide below is for **educational and informational purposes only**.</span>
 
 Please read the following before doing the guide below:
 - This guide is only recommended if you need to install 1 or 2 emulators so you can use them as long as you want, because this guide takes, at minimum, around **20 minutes** to do. A majority of that time is spent waiting for auto-analyzation to finish, and the auto-analyzation time can change depending on your computer's speed.
-- The guide applies to the latest ClassWiz (EX) emulator version (02.01.0030.0000) and the latest fx-ES PLUS re-release emulator version (05.00.0020.0000) as of writing this article.
+- The guide applies to all Casio calculator emulators with a trial period.
 - While the guide uses Ghidra, you can use any reverse-engineering tool to patch the EXE and bypass the activation process.
 
 1. Navigate to where the emulator you want to patch is installed. Create a backup of the DLL `ActivationFx.dll`, then copy its path (on Windows: click on the *original* (not the backup) `ActivationFx.dll`, right-click and select *Copy as path*.)
@@ -84,7 +84,7 @@ Please read the following before doing the guide below:
 10. Under the instruction you patched is a hex byte. Select it and Ctrl+Shift+G again. Now make sure the first field is `RET` and the second field is `0xc`. Press Enter.
 11. Press O to bring up the *Export Program* dialog. Select the output as *PE* or *Original File*, and set the output filename to the path to `ActivationFx.dll`. You can repeat step 1 to grab the path again (don't create a backup this time, unless you haven't).
 12. Press *OK*. In the dialog box that appears click *Overwrite*. **Make sure you have saved a backup of `ActivationFx.dll`!**
-13. Wait for Ghidra to export the EXE. When it's done, a big dialog box will appear. Press Escape to close it. You can now close Ghidra, and delete Ghidra and the project you just made if you want.
+13. Wait for Ghidra to export the DLL. When it's done, a big dialog box will appear. Press Escape to close it. You can now close Ghidra, and delete Ghidra and the project you just made if you want.
 14. Profit!
 
 Now, when starting the patched emulator, no activation dialogs will appear, even if the trial period has expired or has been invalidated.
