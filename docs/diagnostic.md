@@ -478,7 +478,8 @@ The checksum is displayed immediately if this screen is accessed through the deb
 <tr>
 <td>B</td>
 <td><i>Unknown</i>
-</td>
+</td></tr>
+<tr>
 <td><span class="cwxd">CY-237</span></td>
 <td>A</td>
 <td><span class="cwxd">058B</span></td>
