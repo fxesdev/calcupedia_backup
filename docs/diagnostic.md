@@ -726,7 +726,7 @@ The checksum is displayed immediately if this screen is accessed through the deb
 <tr>
 <td><span class="cwxd">CY-217</span></td>
 <td>A</td>
-<td><i>Unknown</i></td>
+<td><span class="cwxd">2F15</span></td>
 <td>fx-991RS X
 </td></tr></tbody></table>
 
