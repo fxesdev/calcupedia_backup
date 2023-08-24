@@ -421,8 +421,8 @@ The checksum is displayed immediately if this screen is accessed through the deb
 <li>The contrast setting in self-test mode has a range of <span class="cwxd">00h</span> - <span class="cwxd">2Ah</span>, while the intended range is <span class="cwxd">0Bh</span> -<span class="cwxd">1Fh</span>. The default setting is 14h. The contrast resetting still applies.</li>
 </ul>
 
-<table class="wikitable">
-<caption><b>Version + checksum list</b>
+<table>
+<caption>Version + checksum list
 </caption>
 <tbody><tr>
 <th>Version</th>
@@ -470,12 +470,15 @@ The checksum is displayed immediately if this screen is accessed through the deb
 <td><span class="cwxd">8F18</span>
 </td></tr>
 <tr>
-<td><span class="cwxd">CY-236</span></td>
+<td rowspan="2"><span class="cwxd">CY-236</span></td>
 <td>A</td>
 <td><span class="cwxd">068B</span></td>
-<td>fx-82CN X
+<td rowspan="2">fx-82CN X
 </td></tr>
 <tr>
+<td>B</td>
+<td><i>Unknown</i>
+</td>
 <td><span class="cwxd">CY-237</span></td>
 <td>A</td>
 <td><span class="cwxd">058B</span></td>
@@ -491,7 +494,7 @@ The checksum is displayed immediately if this screen is accessed through the deb
 <td rowspan="3"><span class="cwxd">CY-239</span></td>
 <td>A</td>
 <td><span class="cwxd">EC3F</span></td>
-<td rowspan="3">fx-991CN X
+<td rowspan="3"><a href="/calcupedia/Casio_fx-991CN_X" title="Casio fx-991CN X">fx-991CN X</a>
 </td></tr>
 <tr>
 <td>B</td>
@@ -592,12 +595,14 @@ The checksum is displayed immediately if this screen is accessed through the deb
 </td></tr>
 <tr>
 <td><span class="cwxd">CY-256</span></td>
-<td colspan="2"><i>No known revisions</i></td>
+<td>A</td>
+<td><i>Unknown</i></td>
 <td>fx-82AR X
 </td></tr>
 <tr>
 <td><span class="cwxd">CY-257</span></td>
-<td colspan="2"><i>No known revisions</i></td>
+<td>A</td>
+<td><i>Unknown</i></td>
 <td>fx-95AR X
 </td></tr>
 <tr>
@@ -699,7 +704,7 @@ The checksum is displayed immediately if this screen is accessed through the deb
 <td><span class="cwxd">CY-298</span></td>
 <td>A</td>
 <td><span class="cwxd">BB26</span></td>
-<td>fx-580VN X
+<td><a href="/calcupedia/Casio_fx-580VN_X" title="Casio fx-580VN X">fx-580VN X</a>
 </td></tr>
 <tr>
 <td><span class="cwxd">CY-213</span></td>
