@@ -49,8 +49,8 @@ Casio's self-test modes are **never translated**. Usually, only the contrast scr
 - Press in order: <span class="k_ms">!</span> <span class="k_ms">E</span> <span class="k_ms">$</span>, then the 4-key row (left to right), then <span class="k_ms">R</span>. The number should be increased to 11.
 - Now press (from the row under the 4-key row) each key in each row, left to right. When all keys are pressed, a screen with `OK` should appear.
 
-#### Revised diagnostic mode
-On revised MS models, the diagnostic mode was modified to more closely resemble the [ES PLUS series self-test mode](#es-plus-series).
+#### Revised MS series
+On revised MS models, the code was based on the ES PLUS series codebase. The new diagnostic mode was also ported over to work on the revised MS series' displays.
 
 After pressing <span class="k_ms">q</span>+<span class="k_ms">7</span>+<span class="k_ms">W</span>, you will first see a screen looking like this:
 ```
@@ -70,6 +70,14 @@ TEST OK
 AC
 ```
 
+##### MS PLUS 2nd edition series
+The MS PLUS 2nd edition models use the ES PLUS 2nd edition codebase, retaining most of the revised diagnostic mode. The fake diagnostic screen was also changed to look something like this:
+```
+1+1=?
+AC
+```
+Internally, the diagnostic mode locking works just like the ES PLUS 2nd edition series. The revised MS diagnostic mode was also copied over.
+
 ### ES series
 *Not to be confused with the [ES PLUS series self-test mode](#es-plus-series).*
 {: .hatnote }
@@ -84,7 +92,7 @@ AC
 If you change the contrast in self-test mode, you will have to exit the self-test (without pressing <span class="k_es">W</span>) to keep the setting, or else it'll just be reset to the default (<span class="esps">11h</span>). Also, if the contrast was set outside the intended range when exiting the self-test, pressing <span class="k_es">W</span> or using the contrast menu will reset the contrast setting.
 
 ### ES PLUS series
-*Not to be confused with the [ES series self-test mode](#es-series) or the [ES PLUS re-release series self-test mode](#es-plus-re-release-series).*
+*Not to be confused with the [ES series self-test mode](#es-series) or the [ES PLUS 2nd edition series self-test mode](#es-plus-2nd edition-series).*
 {: .hatnote }
 
 Pressing <span class="k_es">q</span>+<span class="k_es">7</span>+<span class="k_es">W</span> displays this screen:<br><span class="esps">DIAGNOSTIC<br><br><br>Press AC</span>
@@ -391,10 +399,160 @@ There's no change to the key test in the ES PLUS series models.
 <td><span class="esps">2D4E</span>
 </td></tr></tbody></table>
 
-### ClassWiz (EX) series
-*Not to be confused with the [ClassWiz (CW) series self-test mode](#classwiz-cw-series).*
-{: .hatnote }
+#### ES PLUS 2nd edition series
 
+The ES PLUS 2nd edition series self-test mode is pretty much unchanged from the regular ES PLUS series. However, there are some differences:
+<ul>
+<li>The <span class="esps">DIAGNOSTIC</span> screen has been replaced with a screen that looks something like this:<br><span class="esps">1+1=?&nbsp; &nbsp; &nbsp; 00/01<br><br><br>Press AC</span>
+<ul>
+<li><span class="esps">1+1=?</span> is a random addition/subtraction math problem that only uses 2 single-digit numbers, and with the result between 1 and 5.</li>
+<li><span class="esps">00/01</span> is a counter that keeps track of the number of problems you solved, and the total amount of problems generated. Both numbers are unsigned hex bytes (they do overflow) and are saved to RAM. They are reset if the diagnostic mode or the debug menu (see below) is activated, as that clears the entire RAM.</li>
+<li>Pressing the key with the right answer will change the screen to display <span class="esps">TEST OK</span>. For wrong answers, you're just kicked out instantly.</li>
+</ul></li>
+<li>A debug menu can be accessed by pressing <span class="k_es">6</span> and behaves just like in the EX series. Two key test options were added (<span class="esps">Key1</span> and <span class="esps">Key2</span>), which allows testing of only the first 29 keys (excluding <span class="k_es">W</span>) or the last 20 keys. Currently only known to exist on the fx-570VN PLUS 2nd edition model. There is no battery/solar model check on the ES PLUS 2nd edition models.</li>
+<li>If at least one math problem is solved, another byte stored right before the 2 math problem bytes (see above) is set to 1. If this byte is non-zero, the main diagnostic mode and debug menu are both unaccessible (pressing their keys just kick you out), unless certain criteria is met which causes this byte to reset to 0.</li>
+</ul>
+
+Version screens in ES PLUS 2nd edition models (and normal ES PLUS models as well) typically look like this (fx-570VN PLUS 2nd edition used as example):<br><span class="esps">CY-860 VerA<br>SUM 940B OK IDOK<br>Pd- Read OK<br>Press AC</span><br>
+Where:
+- <span class="esps">CY-860</span>: Version.
+- <span class="esps">VerA</span>: Revision.
+- <span class="esps">SUM 940B OK IDOK</span>: Calculated checksum. <span class="esps">OK</span> means the checksum matches the one in the ROM. The exact purpose of the "ID" check is unknown, but it will display <span class="esps">ID-\-</span> if the checksum was bad.
+
+You can verify the version and checksum using the table below.
+
+<table>
+<caption><b>Version + checksum list</b>
+</caption>
+<tbody><tr>
+<th>Version</th>
+<th>Revision</th>
+<th>Checksum</th>
+<th>Corresponding model(s)
+</th></tr>
+<tr>
+<td><span class="esps">CY-840</span></td>
+<td>A</td>
+<td><i>Unknown</i></td>
+<td>fx-82ES PLUS 2nd edition
+</td></tr>
+<tr>
+<td><span class="esps">CY-841</span></td>
+<td>A</td>
+<td><i>Unknown</i></td>
+<td>fx-85ES PLUS 2nd edition
+</td></tr>
+<tr>
+<td><span class="esps">CY-842</span></td>
+<td>A</td>
+<td><i>Unknown</i></td>
+<td>fx-350ES PLUS 2nd edition
+</td></tr>
+<tr>
+<td><span class="esps">CY-844</span></td>
+<td>A</td>
+<td><i>Unknown</i></td>
+<td>fx-570ES PLUS 2nd edition
+</td></tr>
+<tr>
+<td><span class="esps">CY-845</span></td>
+<td>A</td>
+<td><span class="esps">7064</span></td>
+<td>fx-991ES PLUS 2nd edition
+</td></tr>
+<tr>
+<td><span class="esps">CY-846</span></td>
+<td>A</td>
+<td><i>Unknown</i></td>
+<td>fx-300ES PLUS 2nd edition
+</td></tr>
+<tr>
+<td><span class="esps">CY-847</span></td>
+<td>A</td>
+<td><span class="esps">3C5D</span></td>
+<td>fx-115ES PLUS 2nd edition, fx-991ES PLUS C 2nd edition
+</td></tr>
+<tr>
+<td><span class="esps">CY-848</span></td>
+<td>B</td>
+<td><i>Unknown</i></td>
+<td>fx-82ZA PLUS II
+</td></tr>
+<tr>
+<td><span class="esps">CY-849</span></td>
+<td>B</td>
+<td><span class="esps">06B3</span></td>
+<td>fx-991ZA PLUS II
+</td></tr>
+<tr>
+<td><span class="esps">CY-850</span></td>
+<td>A</td>
+<td><i>Unknown</i></td>
+<td>fx-82LA PLUS 2nd edition
+</td></tr>
+<tr>
+<td><span class="esps">CY-851</span></td>
+<td>A</td>
+<td><i>Unknown</i></td>
+<td>fx-350LA PLUS 2nd edition
+</td></tr>
+<tr>
+<td><span class="esps">CY-852</span></td>
+<td>A</td>
+<td><i>Unknown</i></td>
+<td>fx-570LA PLUS 2nd edition
+</td></tr>
+<tr>
+<td><span class="esps">CY-853</span></td>
+<td>A</td>
+<td><i>Unknown</i></td>
+<td>fx-991LA PLUS 2nd edition
+</td></tr>
+<tr>
+<td><span class="esps">CY-856</span></td>
+<td>A</td>
+<td><i>Unknown</i></td>
+<td>fx-87DE PLUS 2nd edition
+</td></tr>
+<tr>
+<td><span class="esps">CY-857</span></td>
+<td>A</td>
+<td><span class="esps">A4DB</span></td>
+<td>fx-375ES A
+</td></tr>
+<tr>
+<td><span class="esps">CY-858</span></td>
+<td>A</td>
+<td><span class="esps">4C20</span></td>
+<td>fx-82ES PLUS A 2nd edition
+</td></tr>
+<tr>
+<td><span class="esps">CY-859</span></td>
+<td>A</td>
+<td><i>Unknown</i></td>
+<td>fx-991ID PLUS 2nd edition
+</td></tr>
+<tr>
+<td><span class="esps">CY-860</span></td>
+<td>A</td>
+<td><span class="esps">940B</span></td>
+<td>fx-570VN PLUS 2nd edition
+</td></tr>
+<tr>
+<td><span class="esps">CY-863</span></td>
+<td>A</td>
+<td><span class="esps">D958</span></td>
+<td>fx-82AU PLUS II 2nd edition
+</td></tr>
+<tr>
+<td><span class="esps">CY-864</span></td>
+<td>A</td>
+<td><i>Unknown</i></td>
+<td>fx-100AU PLUS 2nd edition
+</td></tr></tbody></table>
+
+### ClassWiz series
+#### EX models
 Press <span class="k_ex">q</span>+<span class="k_ex">7</span>+<span class="k_ex">W</span>. You will see:<br><span class="cwxd">DIAGNOSTIC<br><br><br>Press AC</span>
 
 Here, there are some menus you can access by pressing a key (except <span class="k_ex">C</span>) within 5 seconds:
@@ -495,7 +653,7 @@ The checksum is displayed immediately if this screen is accessed through the deb
 <td rowspan="3"><span class="cwxd">CY-239</span></td>
 <td>A</td>
 <td><span class="cwxd">EC3F</span></td>
-<td rowspan="3"><a href="/calcupedia/Casio_fx-991CN_X" title="Casio fx-991CN X">fx-991CN X</a>
+<td rowspan="3">fx-991CN X
 </td></tr>
 <tr>
 <td>B</td>
@@ -705,7 +863,7 @@ The checksum is displayed immediately if this screen is accessed through the deb
 <td><span class="cwxd">CY-298</span></td>
 <td>A</td>
 <td><span class="cwxd">BB26</span></td>
-<td><a href="/calcupedia/Casio_fx-580VN_X" title="Casio fx-580VN X">fx-580VN X</a>
+<td>fx-580VN X
 </td></tr>
 <tr>
 <td><span class="cwxd">CY-213</span></td>
@@ -736,169 +894,12 @@ The checksum is displayed immediately if this screen is accessed through the deb
 <td>fx-991RS X
 </td></tr></tbody></table>
 
-### ES PLUS re-release series
-*Not to be confused with the [ES PLUS series self-test mode](#es-plus-series).*
-{: .hatnote }
-
-The ES PLUS re-release series self-test mode is pretty much unchanged from the regular ES PLUS series. However, there are some differences:
-<ul>
-<li>The <span class="esps">DIAGNOSTIC</span> screen has been replaced with a screen that looks something like this:<br><span class="esps">1+1=?&nbsp; &nbsp; &nbsp; 00/01<br><br><br>Press AC</span>
-<ul>
-<li><span class="esps">1+1=?</span> is a random addition/subtraction math problem that only uses 2 single-digit numbers, and with the result between 1 and 5.</li>
-<li><span class="esps">00/01</span> is a counter that keeps track of the number of problems you solved, and the total amount of problems generated. Both numbers are unsigned hex bytes (they do overflow) and are saved to RAM. They are reset if the diagnostic mode or the debug menu (see below) is activated, as that clears the entire RAM.</li>
-<li>Pressing the key with the right answer will change the screen to display <span class="esps">TEST OK</span>. For wrong answers, you're just kicked out instantly.</li>
-</ul></li>
-<li>A debug menu can be accessed by pressing <span class="k_es">6</span> and behaves just like in the EX series. Two key test options were added (<span class="esps">Key1</span> and <span class="esps">Key2</span>), which allows testing of only the first 29 keys (excluding <span class="k_es">W</span>) or the last 20 keys. Currently only known to exist on the fx-570VN PLUS 2nd edition model. There is no battery/solar model check on the ES PLUS re-release models.</li>
-<li>If at least one math problem is solved, another byte stored right before the 2 math problem bytes (see above) is set to 1. If this byte is non-zero, the main diagnostic mode and debug menu are both unaccessible (pressing their keys just kick you out), unless certain criteria is met which causes this byte to reset to 0.</li>
-</ul>
-
-Version screens in ES PLUS re-release models (and normal ES PLUS models as well) typically look like this (fx-570VN PLUS 2nd edition used as example):<br><span class="esps">CY-860 VerA<br>SUM 940B OK IDOK<br>Pd- Read OK<br>Press AC</span><br>
-Where:
-- <span class="esps">CY-860</span>: Version.
-- <span class="esps">VerA</span>: Revision.
-- <span class="esps">SUM 940B OK IDOK</span>: Calculated checksum. <span class="esps">OK</span> means the checksum matches the one in the ROM. The exact purpose of the "ID" check is unknown, but it will display <span class="esps">ID-\-</span> if the checksum was bad.
-
-You can verify the version and checksum using the table below.
-
-<table>
-<caption><b>Version + checksum list</b>
-</caption>
-<tbody><tr>
-<th>Version</th>
-<th>Revision</th>
-<th>Checksum</th>
-<th>Corresponding model(s)
-</th></tr>
-<tr>
-<td><span class="esps">CY-840</span></td>
-<td>A</td>
-<td><i>Unknown</i></td>
-<td>fx-82ES PLUS 2nd edition
-</td></tr>
-<tr>
-<td><span class="esps">CY-841</span></td>
-<td>A</td>
-<td><i>Unknown</i></td>
-<td>fx-85ES PLUS 2nd edition
-</td></tr>
-<tr>
-<td><span class="esps">CY-842</span></td>
-<td>A</td>
-<td><i>Unknown</i></td>
-<td>fx-350ES PLUS 2nd edition
-</td></tr>
-<tr>
-<td><span class="esps">CY-844</span></td>
-<td>A</td>
-<td><i>Unknown</i></td>
-<td>fx-570ES PLUS 2nd edition
-</td></tr>
-<tr>
-<td><span class="esps">CY-845</span></td>
-<td>A</td>
-<td><span class="esps">7064</span></td>
-<td>fx-991ES PLUS 2nd edition
-</td></tr>
-<tr>
-<td><span class="esps">CY-846</span></td>
-<td>A</td>
-<td><i>Unknown</i></td>
-<td>fx-300ES PLUS 2nd edition
-</td></tr>
-<tr>
-<td><span class="esps">CY-847</span></td>
-<td>A</td>
-<td><span class="esps">3C5D</span></td>
-<td>fx-115ES PLUS 2nd edition, fx-991ES PLUS C 2nd edition
-</td></tr>
-<tr>
-<td><span class="esps">CY-848</span></td>
-<td>B</td>
-<td><i>Unknown</i></td>
-<td>fx-82ZA PLUS II
-</td></tr>
-<tr>
-<td><span class="esps">CY-849</span></td>
-<td>B</td>
-<td><span class="esps">06B3</span></td>
-<td>fx-991ZA PLUS II
-</td></tr>
-<tr>
-<td><span class="esps">CY-850</span></td>
-<td>A</td>
-<td><i>Unknown</i></td>
-<td>fx-82LA PLUS 2nd edition
-</td></tr>
-<tr>
-<td><span class="esps">CY-851</span></td>
-<td>A</td>
-<td><i>Unknown</i></td>
-<td>fx-350LA PLUS 2nd edition
-</td></tr>
-<tr>
-<td><span class="esps">CY-852</span></td>
-<td>A</td>
-<td><i>Unknown</i></td>
-<td>fx-570LA PLUS 2nd edition
-</td></tr>
-<tr>
-<td><span class="esps">CY-853</span></td>
-<td>A</td>
-<td><i>Unknown</i></td>
-<td>fx-991LA PLUS 2nd edition
-</td></tr>
-<tr>
-<td><span class="esps">CY-856</span></td>
-<td>A</td>
-<td><i>Unknown</i></td>
-<td>fx-87DE PLUS 2nd edition
-</td></tr>
-<tr>
-<td><span class="esps">CY-857</span></td>
-<td>A</td>
-<td><span class="esps">A4DB</span></td>
-<td>fx-375ES A
-</td></tr>
-<tr>
-<td><span class="esps">CY-858</span></td>
-<td>A</td>
-<td><span class="esps">4C20</span></td>
-<td>fx-82ES PLUS A 2nd edition
-</td></tr>
-<tr>
-<td><span class="esps">CY-859</span></td>
-<td>A</td>
-<td><i>Unknown</i></td>
-<td>fx-991ID PLUS 2nd edition
-</td></tr>
-<tr>
-<td><span class="esps">CY-860</span></td>
-<td>A</td>
-<td><span class="esps">940B</span></td>
-<td>fx-570VN PLUS 2nd edition
-</td></tr>
-<tr>
-<td><span class="esps">CY-863</span></td>
-<td>A</td>
-<td><span class="esps">D958</span></td>
-<td>fx-82AU PLUS II 2nd edition
-</td></tr>
-<tr>
-<td><span class="esps">CY-864</span></td>
-<td>A</td>
-<td><i>Unknown</i></td>
-<td>fx-100AU PLUS 2nd edition
-</td></tr></tbody></table>
-
-### ClassWiz (CW) series
-*Not to be confused with the [ClassWiz (EX) series self-test mode](#classwiz-ex-series).*
-{: .hatnote }
-
+#### CW models
 In the CW models, <span class="k_cw">q</span>+<span class="k_cw">7</span>+<span class="k_cw">W</span> does not work. You have to hold <span class="k_cw">T</span> in addition to <span class="k_cw">q</span> and <span class="k_cw">7</span>, which makes the combination <span class="k_cw">q</span>+<span class="k_cw">7</span>+<span class="k_cw">T</span>+<span class="k_cw">W</span>.<br>
 In addition to the updated key combination, a new key combination was added, which is <span class="k_cw">T</span>+<span class="k_cw">C</span>+<span class="k_cw">W</span>. Most people in China know this key combination instead of the updated old one above.
 
 <ul>
-<li>Pressing <span class="k_cw">q</span>+<span class="k_cw">7</span>+<span class="k_cw">T</span>+<span class="k_cw">W</span> or <span class="k_cw">T</span>+<span class="k_cw">C</span>+<span class="k_cw">W</span> brings up the same math problem screen as the ES PLUS re-release series. The only difference is that when you're kicked out on this screen, the <span class="k_cw">w</span>HOME menu pops up. The RAM is not cleared on the math problem screen, so all settings are retained.</li>
+<li>Pressing <span class="k_cw">q</span>+<span class="k_cw">7</span>+<span class="k_cw">T</span>+<span class="k_cw">W</span> or <span class="k_cw">T</span>+<span class="k_cw">C</span>+<span class="k_cw">W</span> brings up the same math problem screen as the ES PLUS 2nd edition series. The only difference is that when you're kicked out on this screen, the <span class="k_cw">w</span>HOME menu pops up. The RAM is not cleared on the math problem screen, so all settings are retained.</li>
 <li>The battery/solar model check and the debug menu make a return. The debug menu replaced the key test with <span class="espl">Key1 test</span> and <span class="espl">Key2 test</span>, which allows testing of only the first 27 keys (excluding <span class="k_cw">W</span>) or the last 20 keys.</li>
 <li>The main diagnostic mode can still be accessed with <span class="k_cw">9</span>. There are some differences to the EX models:
 <ul>
@@ -916,7 +917,7 @@ You can verify the version and checksum with the table below.</li>
 </ul></li></ul>
 
 <table>
-<caption><b>Version + checksum list</b>
+<caption>Version + checksum list
 </caption>
 <tbody><tr>
 <th>Version</th>
@@ -1062,6 +1063,30 @@ You can verify the version and checksum with the table below.</li>
 <tr>
 <td>B</td>
 <td><span class="cwcwd">D7BB</span>
+</td></tr>
+<tr>
+<td><span class="cwcwd">EY-029</span></td>
+<td>A</td>
+<td><i>Unknown</i></td>
+<td>fx-JP500CW
+</td></tr>
+<tr>
+<td><span class="cwcwd">EY-030</span></td>
+<td>A</td>
+<td><i>Unknown</i></td>
+<td>fx-JP700CW
+</td></tr>
+<tr>
+<td><span class="cwcwd">EY-031</span></td>
+<td>A</td>
+<td><i>Unknown</i></td>
+<td>fx-JP900CW
+</td></tr>
+<tr>
+<td><span class="cwcwd">EY-032</span></td>
+<td>A</td>
+<td><i>Unknown</i></td>
+<td>fx-550AZ
 </td></tr>
 <tr>
 <td><span class="cwcwd">EY-036</span></td>
