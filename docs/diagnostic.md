@@ -112,7 +112,7 @@ After pressing <span class="k_es">C</span>, the contrast setting screen appears 
 There's no change to the key test in the ES PLUS series models.
 
 <table>
-<caption><b>Version + checksum list</b>
+<caption>Version + checksum list
 </caption>
 <tbody><tr>
 <th>Version</th>
@@ -164,16 +164,12 @@ There's no change to the key test in the ES PLUS series models.
 <td><span class="esps">GY-454</span></td>
 <td>A</td>
 <td><span class="esps">F929</span></td>
-<td rowspan="3">fx-570ES PLUS
+<td rowspan="2">fx-570ES PLUS
 </td></tr>
 <tr>
-<td rowspan="2"><span class="esps">GY454X</span></td>
+<td><span class="esps">GY454X</span></td>
 <td>E</td>
 <td><span class="esps">8929</span>
-</td></tr>
-<tr>
-<td>F</td>
-<td><i>Unknown</i>
 </td></tr>
 <tr>
 <td rowspan="2"><span class="esps">GY-455</span></td>
@@ -192,7 +188,7 @@ There's no change to the key test in the ES PLUS series models.
 </td></tr>
 <tr>
 <td>F</td>
-<td><i>Unknown</i>
+<td><span class="esps">A33D</span>
 </td></tr>
 <tr>
 <td><span class="esps">GY456X</span></td>
@@ -422,7 +418,7 @@ Where:
 You can verify the version and checksum using the table below.
 
 <table>
-<caption><b>Version + checksum list</b>
+<caption>Version + checksum list
 </caption>
 <tbody><tr>
 <th>Version</th>
@@ -547,7 +543,7 @@ You can verify the version and checksum using the table below.
 <tr>
 <td><span class="esps">CY-864</span></td>
 <td>A</td>
-<td><i>Unknown</i></td>
+<td><span class="esps">8A4E</span></td>
 <td>fx-100AU PLUS 2nd edition
 </td></tr></tbody></table>
 
