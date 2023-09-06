@@ -331,7 +331,7 @@ There's no change to the key test in the ES PLUS series models.
 <td><span class="esps">LY718X</span></td>
 <td>A</td>
 <td><span class="esps">F0E2</span></td>
-<td>fx-375ES
+<td>fx-915ES
 </td></tr>
 <tr>
 <td><span class="esps">LY719X</span></td>
