@@ -348,7 +348,7 @@ There's no change to the key test in the ES PLUS series models.
 <tr>
 <td><span class="esps">LY721X</span></td>
 <td>A</td>
-<td><i>Unknown</i></td>
+<td><span class="esps">59CB</span></td>
 <td>fx-82DE PLUS
 </td></tr>
 <tr>
@@ -417,7 +417,7 @@ Where:
 
 You can verify the version and checksum using the table below.
 
-<table>
+<table class="wikitable">
 <caption>Version + checksum list
 </caption>
 <tbody><tr>
@@ -507,7 +507,7 @@ You can verify the version and checksum using the table below.
 <tr>
 <td><span class="esps">CY-856</span></td>
 <td>A</td>
-<td><i>Unknown</i></td>
+<td><span class="esps">3E89</span></td>
 <td>fx-87DE PLUS 2nd edition
 </td></tr>
 <tr>
