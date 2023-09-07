@@ -46,7 +46,7 @@ Casio's self-test modes are **never translated**. Usually, only the contrast scr
 2. After pressing <span class="k_ms">q</span> enough times, you will see the number 0 on the screen. This is the key test. Here is what you want to press:<br>
 - First press <span class="k_ms">q</span> then <span class="k_ms">Q</span>. The number should increase to 2.
 - Press <span class="k_ms">w</span>. If the number doesn't change to 3 even though your <span class="k_ms">w</span> button works fine outside of the self-test mode, you are unfortunately stuck and unable to continue the key test.
-- Press in order: <span class="k_ms">!</span> <span class="k_ms">E</span> <span class="k_ms">$</span>, then the 4-key row (left to right), then <span class="k_ms">R</span>. The number should be increased to 11.
+- Press in order: <span class="k_ms">!E$</span>, then the 4-key row (left to right), then <span class="k_ms">R</span>. The number should be increased to 11.
 - Now press (from the row under the 4-key row) each key in each row, left to right. When all keys are pressed, a screen with `OK` should appear.
 
 #### Revised MS series
@@ -86,7 +86,7 @@ Internally, the diagnostic mode locking works just like the ES PLUS 2nd edition 
 2. After pressing <span class="k_es">q</span> enough times, you will see a screen looking something like this (fx-500ES used as example):<br><span class="esps">ROM 018<br>MODE P2<br>Press AC</span>
 <ol start="3">
 <li>Press <span class="k_es">C</span>. You will see a contrast setting screen, but with <span class="esps">XXh</span> displayed, which is the contrast value in hexadecimal. The allowed range in the self-test mode (<span class="esps">00h</span> - <span class="esps">1Ah</span>) is also larger than the normal intended range (<span class="esps">04h</span> - <span class="esps">1Ah</span>).</li>
-<li>Press <span class="k_es">C</span>, and you will see <span class="esps">0</span> on the screen, which is the key test. Press in order: <span class="k_es">q</span> <span class="k_es">Q</span> <span class="k_es">E</span> <span class="k_es">$</span> <span class="k_es">w</span>, then the two keys under <span class="k_es">q</span> and <span class="k_es">Q</span> (left to right), <span class="k_es">!</span> <span class="k_es">R</span>, then the two keys under <span class="k_es">w</span> and <span class="k_es">W</span> (left to right). Now simply press the remaining keys, top to bottom, left to right.</li>
+<li>Press <span class="k_es">C</span>, and you will see <span class="esps">0</span> on the screen, which is the key test. Press in order: <span class="k_es">qQE$w</span>, then the two keys under <span class="k_es">q</span> and <span class="k_es">Q</span> (left to right), <span class="k_es">!R</span>, then the two keys under <span class="k_es">w</span> and <span class="k_es">W</span> (left to right). Now simply press the remaining keys, top to bottom, left to right.</li>
 </ol>
 
 If you change the contrast in self-test mode, you will have to exit the self-test (without pressing <span class="k_es">W</span>) to keep the setting, or else it'll just be reset to the default (<span class="esps">11h</span>). Also, if the contrast was set outside the intended range when exiting the self-test, pressing <span class="k_es">W</span> or using the contrast menu will reset the contrast setting.
@@ -896,7 +896,7 @@ In addition to the updated key combination, a new key combination was added, whi
 
 <ul>
 <li>Pressing <span class="k_cw">q</span>+<span class="k_cw">7</span>+<span class="k_cw">T</span>+<span class="k_cw">W</span> or <span class="k_cw">T</span>+<span class="k_cw">C</span>+<span class="k_cw">W</span> brings up the same math problem screen as the ES PLUS 2nd edition series. The only difference is that when you're kicked out on this screen, the <span class="k_cw">w</span>HOME menu pops up. The RAM is not cleared on the math problem screen, so all settings are retained.</li>
-<li>The battery/solar model check and the debug menu make a return. The debug menu replaced the key test with <span class="espl">Key1 test</span> and <span class="espl">Key2 test</span>, which allows testing of only the first 27 keys (excluding <span class="k_cw">W</span>) or the last 20 keys.</li>
+<li>The battery/solar model check and the debug menu make a return. The battery/solar model check has different keys displayed and actually refers to the CW models' keymap. The debug menu replaced the key test with <span class="espl">Key1 test</span> and <span class="espl">Key2 test</span>, which allows testing of only the first 27 keys (excluding <span class="k_cw">W</span>) or the last 20 keys.</li>
 <li>The main diagnostic mode can still be accessed with <span class="k_cw">9</span>. There are some differences to the EX models:
 <ul>
 <li>After the final display test screen, the calculator freezes for about 1 second, then displays this screen (fx-880BTG used as example):<br><span class="cwcwd">EY-023<br>V.B&nbsp; Bt OK<br>SUM8113 OK<br>Press AC</span><br>Where:
