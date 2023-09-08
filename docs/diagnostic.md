@@ -429,13 +429,13 @@ You can verify the version and checksum using the table below.
 <tr>
 <td><span class="esps">CY-840</span></td>
 <td>A</td>
-<td><i>Unknown</i></td>
+<td><span class="esps">3B36</span></td>
 <td>fx-82ES PLUS 2nd edition
 </td></tr>
 <tr>
 <td><span class="esps">CY-841</span></td>
 <td>A</td>
-<td><i>Unknown</i></td>
+<td><span class="esps">3B35</span></td>
 <td>fx-85ES PLUS 2nd edition
 </td></tr>
 <tr>
@@ -507,7 +507,7 @@ You can verify the version and checksum using the table below.
 <tr>
 <td><span class="esps">CY-856</span></td>
 <td>A</td>
-<td><i>Unknown</i></td>
+<td><span class="esps">3E89</span></td>
 <td>fx-87DE PLUS 2nd edition
 </td></tr>
 <tr>
