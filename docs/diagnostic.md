@@ -405,7 +405,7 @@ The ES PLUS 2nd edition series self-test mode is pretty much unchanged from the 
 <li><span class="esps">00/01</span> is a counter that keeps track of the number of problems you solved, and the total amount of problems generated. Both numbers are unsigned hex bytes (they do overflow) and are saved to RAM. They are reset if the diagnostic mode or the debug menu (see below) is activated, as that clears the entire RAM.</li>
 <li>Pressing the key with the right answer will change the screen to display <span class="esps">TEST OK</span>. For wrong answers, you're just kicked out instantly.</li>
 </ul></li>
-<li>A debug menu can be accessed by pressing <span class="k_es">6</span> and behaves just like in the EX series. Two key test options were added (<span class="esps">Key1</span> and <span class="esps">Key2</span>), which allows testing of only the first 29 keys (excluding <span class="k_es">W</span>) or the last 20 keys. Currently only known to exist on the fx-570VN PLUS 2nd edition model. There is no battery/solar model check on the ES PLUS 2nd edition models.</li>
+<li>A debug menu can be accessed by pressing <span class="k_es">6</span> and behaves just like in the EX series. Two key test options were added (<span class="esps">Key1</span> and <span class="esps">Key2</span>), which allows testing of only the first 29 keys (excluding <span class="k_es">W</span>) or the last 20 keys. There is no battery/solar model check on the ES PLUS 2nd edition models.</li>
 <li>If at least one math problem is solved, another byte stored right before the 2 math problem bytes (see above) is set to 1. If this byte is non-zero, the main diagnostic mode and debug menu are both unaccessible (pressing their keys just kick you out), unless certain criteria is met which causes this byte to reset to 0.</li>
 </ul>
 
@@ -1027,7 +1027,7 @@ You can verify the version and checksum with the table below.</li>
 <td><span class="cwcwd">EY-023</span></td>
 <td>B</td>
 <td><span class="cwcwd">8113</span></td>
-<td><a href="/calcupedia/Casio_fx-880BTG" title="Casio fx-880BTG">fx-880BTG</a>
+<td>fx-880BTG
 </td></tr>
 <tr>
 <td><span class="cwcwd">EY-024</span></td>
