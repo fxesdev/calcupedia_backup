@@ -973,7 +973,8 @@ You can verify the version and checksum with the table below.</li>
 </td></tr>
 <tr>
 <td><span class="cwcwd">EY-010</span></td>
-<td colspan="2"><i>No known revisions</i></td>
+<td>A</td>
+<td><span class="cwcwd">08DE</span></td>
 <td>fx-570SP CW
 </td></tr>
 <tr>
@@ -1026,7 +1027,7 @@ You can verify the version and checksum with the table below.</li>
 <td><span class="cwcwd">EY-023</span></td>
 <td>B</td>
 <td><span class="cwcwd">8113</span></td>
-<td>fx-880BTG
+<td><a href="/calcupedia/Casio_fx-880BTG" title="Casio fx-880BTG">fx-880BTG</a>
 </td></tr>
 <tr>
 <td><span class="cwcwd">EY-024</span></td>
