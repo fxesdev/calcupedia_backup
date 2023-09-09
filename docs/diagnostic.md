@@ -14,7 +14,7 @@ From Calcupedia, the free calculator encyclopedia
 > If you think something on this page was incorrect, please edit the corresponding page on Calcupedia with the correct information.<br>
 > For protected pages, you can contact the administrators to fix the information on the page.
 
-The calculator self-test mode is a special mode used to diagnose and fix bugs before release. It can also be used to [identify fake calculators](/docs/identify_fakes.html).
+The calculator self-test mode is a special mode used to diagnose and fix bugs before release. It can also be used to [identify fake calculators](/calcupedia_backup/docs/identify_fakes.html).
 
 <details open markdown="block">
 <summary>

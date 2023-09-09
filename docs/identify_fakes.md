@@ -75,4 +75,4 @@ Normally, Casio calculators use either [AA](https://wikipedia.org/wiki/AA_batter
 Check the battery and voltage that the calculator uses in the power specification (usually found on the back of the calculator). Open it up, and if the battery and/or voltage does not match the specification (for example, a 3-volt battery is used, i.e. a [CR2025](https://wikipedia.org/wiki/CR2025) battery), it must be a fake.
 
 ## The DIAGNOSTIC/self-test mode
-See [Calculator self-test](/docs/diagnostic.html#casio-calculators).
+See [Calculator self-test](/calcupedia_backup/docs/diagnostic.html#casio-calculators).
