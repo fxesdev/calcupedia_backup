@@ -575,7 +575,7 @@ The checksum is displayed immediately if this screen is accessed through the deb
 <li>The contrast setting in self-test mode has a range of <span class="cwxd">00h</span> - <span class="cwxd">2Ah</span>, while the intended range is <span class="cwxd">0Bh</span> -<span class="cwxd">1Fh</span>. The default setting is 14h. The contrast resetting still applies.</li>
 </ul>
 
-<table>
+<table class="wikitable">
 <caption>Version + checksum list
 </caption>
 <tbody><tr>
@@ -646,10 +646,10 @@ The checksum is displayed immediately if this screen is accessed through the deb
 <td>fx-95CN X
 </td></tr>
 <tr>
-<td rowspan="3"><span class="cwxd">CY-239</span></td>
+<td rowspan="4"><span class="cwxd">CY-239</span></td>
 <td>A</td>
 <td><span class="cwxd">EC3F</span></td>
-<td rowspan="3">fx-991CN X
+<td rowspan="4">fx-991CN X
 </td></tr>
 <tr>
 <td>B</td>
@@ -658,6 +658,10 @@ The checksum is displayed immediately if this screen is accessed through the deb
 <tr>
 <td>C</td>
 <td><span class="cwxd">04A8</span>
+</td></tr>
+<tr>
+<td>F</td>
+<td><span class="cwxd">C3C7</span>
 </td></tr>
 <tr>
 <td><span class="cwxd">CY-240</span></td>
@@ -973,7 +977,8 @@ You can verify the version and checksum with the table below.</li>
 </td></tr>
 <tr>
 <td><span class="cwcwd">EY-010</span></td>
-<td colspan="2"><i>No known revisions</i></td>
+<td>A</td>
+<td><span class="cwcwd">08DE</span></td>
 <td>fx-570SP CW
 </td></tr>
 <tr>
@@ -1122,6 +1127,6 @@ You can verify the version and checksum with the table below.</li>
 <tr>
 <td><span class="cwcwd">EY-047</span></td>
 <td>A</td>
-<td><i>Unknown</i></td>
+<td><span class="cwcwd">2D34</span></td>
 <td>fx-810DE CW
 </td></tr></tbody></table>
