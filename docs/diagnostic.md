@@ -823,7 +823,7 @@ The checksum is displayed immediately if this screen is accessed through the deb
 <tr>
 <td><span class="cwxd">CY-291</span></td>
 <td>A</td>
-<td><i>Unknown</i></td>
+<td><span class="cwxd">E19D</span></td>
 <td>fx-82CE X
 </td></tr>
 <tr>
