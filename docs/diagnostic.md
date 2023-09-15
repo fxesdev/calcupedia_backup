@@ -331,7 +331,7 @@ There's no change to the key test in the ES PLUS series models.
 <td><span class="esps">LY718X</span></td>
 <td>A</td>
 <td><span class="esps">F0E2</span></td>
-<td>fx-375ES
+<td>fx-915ES
 </td></tr>
 <tr>
 <td><span class="esps">LY719X</span></td>
@@ -552,7 +552,7 @@ You can verify the version and checksum using the table below.
 Press <span class="k_ex">q</span>+<span class="k_ex">7</span>+<span class="k_ex">W</span>. You will see:<br><span class="cwxd">DIAGNOSTIC<br><br><br>Press AC</span>
 
 Here, there are some menus you can access by pressing a key (except <span class="k_ex">C</span>) within 5 seconds:
-- <span class="k_ex">8</span>: **Battery/solar model check.** A list of 8 keys is shown, and you will have to press them all. The key list assumes the key layout of ES PLUS models with the base-N logarithm function, such as the fx-991ES PLUS. After that, <span class="cwxd">Battery MODEL OK!</span> will appear under the key list. On models with a solar panel, if solar power is being used (that is, the panel isn't covered), <span class="cwxd">Solar MODEL OK!</span> will appear instead, and to get both messages to appear at the same time, you have to do the key presses with the solar panel covered, then remove the cover after <span class="cwxd">Battery MODEL OK!</span> appears.
+- <span class="k_ex">8</span>: **Battery/solar model check.** A list of 8 keys is shown, and you will have to press them all. The key list assumes the key layout of models like the fx-82EX. After that, <span class="cwxd">Battery MODEL OK!</span> will appear under the key list. On models with a solar panel, if solar power is being used (that is, the panel isn't covered), <span class="cwxd">Solar MODEL OK!</span> will appear instead, and to get both messages to appear at the same time, you have to do the key presses with the solar panel covered, then remove the cover after <span class="cwxd">Battery MODEL OK!</span> appears.
 - <span class="k_ex">6</span>: **Debug menu (some models only).** Allows you to choose between the display test, the version check screen, the key test, and the contrast screen.
 
 The original diagnostic mode accessed by pressing <span class="k_ex">9</span> is still accessible, albeit with some differences from the ES PLUS series:
@@ -903,6 +903,7 @@ In addition to the updated key combination, a new key combination was added, whi
 <li>The battery/solar model check and the debug menu make a return. The battery/solar model check has different keys displayed and actually refers to the CW models' keymap. The debug menu replaced the key test with <span class="espl">Key1 test</span> and <span class="espl">Key2 test</span>, which allows testing of only the first 27 keys (excluding <span class="k_cw">W</span>) or the last 20 keys.</li>
 <li>The main diagnostic mode can still be accessed with <span class="k_cw">9</span>. There are some differences to the EX models:
 <ul>
+<li>On the final display test screen, you can press <span class="k_cw">5</span> to bring up a rectangle test screen.</li>
 <li>After the final display test screen, the calculator freezes for about 1 second, then displays this screen (fx-880BTG used as example):<br><span class="cwcwd">EY-023<br>V.B&nbsp; Bt OK<br>SUM8113 OK<br>Press AC</span><br>Where:
 <ul>
 <li><span class="cwcwd">EY-023</span>: Version.</li>
