@@ -221,7 +221,7 @@ This section will (and aims to) contain downloads for all **official** Casio emu
 <td><a href="https://edu.casio.com/freetrial/en/download2.php?lang=1&amp;file_no=19567">Download (02.01.0030.0000)</a>
 </td></tr>
 <tr>
-<td>fx-82/85/350CN X Emulator</td>
+<td>fx-82/350CN X Emulator</td>
 <td><a href="https://edu.casio.com/freetrial/en/download2.php?lang=1&amp;file_no=20139">Download (02.01.0030.0000)</a>
 </td></tr>
 <tr>
