@@ -1126,6 +1126,12 @@ You can verify the version and checksum with the table below.</li>
 <td>fx-8200 AU
 </td></tr>
 <tr>
+<td><span class="cwcwd">EY-046</span></td>
+<td>A</td>
+<td><i>Unknown</i></td>
+<td>fx-570MY CW
+</td></tr>
+<tr>
 <td><span class="cwcwd">EY-047</span></td>
 <td>A</td>
 <td><span class="cwcwd">2D34</span></td>
