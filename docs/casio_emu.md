@@ -106,9 +106,9 @@ Some of Casio's emulators/emulator packs are currently lost or kept private for 
   - <span class="text-red-300">**Partially found.**</span>
   - Contains emulators for 4 models: fx-82ES, fx-83ES, fx-300ES, and fx-82AU. Only a leaked fx-82ES emulator (1.00 Sample) is available on the internet, while version 1.1 emulators are completely lost.
   - Casio no longer sells this pack, and it wasn't archived by most. No ISO images and *almost* no emulators from the pack have resurfaced on the internet. Instead, you can only find some images of the version 1.1 box and CD, as well as some manuals showing what the emulator looks like and how it would've been installed and uninstalled.
-- **FC-200V Emulator** (financial calculator emulator):
+- **FC-x00V Emulator** (financial calculator emulator):
   - <span class="text-red-300">**Lost.**</span>
-  - This emulator is also one of Casio's paid products, and it met the same fate just like with the fx-ES Emulator pack. This emulator is largely unpopular partly because it's for finance rather than something you'd use in math class, and probably only a very small number of people actually bought it. To this day, no copies of the emulator were found. The only evidence of it existing is [a YouTube video showcasing the emulator](https://www.youtube.com/watch?v=4LkJfcnCTRk).
+  - These emulators are also part of Casio's paid products, and they met the same fate just like with the fx-ES Emulator pack. These emulators are largely unpopular partly because it's for finance rather than something you'd use in math class, and probably only a very small number of people actually bought them. To this day, no copies of the emulators were found. The only evidence of them existing are some YouTube videos showcasing the emulators.
 - **fx-ES PLUS Emulator** (ES PLUS model emulator pack):
   - <span class="text-red-300">**Partially found.**</span>
   - This pack also met the same fate as the fx-ES Emulator pack, however we do have a full (cracked) version 4.0 pack, as well as a version 3.02.1.0 (albeit modified) fx-570VN PLUS Emulator.
