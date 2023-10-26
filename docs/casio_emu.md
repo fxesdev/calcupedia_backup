@@ -51,16 +51,6 @@ The only known cracked version of these emulators to exist is the cracked versio
 The crack can be downloaded [here](https://bit.ly/fx-580-VN-X). <span class="text-red-300">If your country bans piracy, **do not download this crack** if you haven't legally purchased a license.</span><br>
 If you cannot read the Vietnamese install instructions, installing it is pretty straightforward: simply install the evaluation version using the provided installer, then copy `Crack\fx-580VN X Emulator.exe` to the emulator's install directory. The "cracked" `CLASSWIZ_P20.dll` is just a bitmap swap, so you don't have to copy it over.
 
-You can also find a standalone cracked fx-570VN PLUS emulator  named *RC fx-570VN PLUS Emulator*. It's a heavily modified version of the fx-570VN PLUS Emulator from the fx-ES PLUS Emulator pack (version 3.02.1.0) by QLam Xmaster (according to the about dialog). Here's what's different from the regular version:
-- The interface is almost completely modified to be Vietnamese.
-- At the bottom of the main window is a message saying: *cracked version for HTKC :)* (it is currently unknown what HTKC means)
-- Some options are disabled for some reason; specifically *x3 Zoom*, *Emulator Manual*, and *License* (changed to *License hacked*). You can force x3 zoom with a simple registry hack (open Command Prompt as an administrator, paste in `reg add "HKCU\Software\CASIO\U8EMU\Casio fx570vn plus\RC fx-570VN PLUS" /v ZOOM /t REG_DWORD /d 3 /f` and press Enter).
-- The about dialog has some Vietnamese added, which appears to only using ASCII characters. It says: *Giả lập sử dụng y như máy thiệt! Có thể chụp màn hình phục vụ cho trao đổi toán học.* (Use the emulator just like the real calculator! You can capture screenshots for math exchange.)
-You can download this version [below](#downloads).
-
-If you search for "QLam Xmaster", eventually you'll find two more versions of this mod also named *RC fx-570VN PLUS Emulator*, a version with the modded Vietnamese UI, and a version with the UI intact. They are functionally identical to the version mentioned above. Both have the same content in the about dialog, however there are links to QLam's website and Facebook page. The bottom of the main window now says *Rebuilded by QLam Xmaster* in both versions, and the EXE filename in both versions has a `_patched` suffix. The version mentioned above was probably a modified version of QLam's mod with the Vietnamese UI, as evident by the first part in the about dialog in the modified mod using Unicode Vietnamese characters rather than ASCII.<br>
-Both of these versions are also linked [below](#downloads).
-
 ##### DIY patching
 Since it's very hard to find cracked versions of these emulators, you probably need to patch the EXE yourself.
 
