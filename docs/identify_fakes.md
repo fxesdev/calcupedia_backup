@@ -68,6 +68,10 @@ On the CW series, when releasing <span class="k_cw">1</span>, <span class="cwcwd
 - The ES, ES PLUS and EX series will display <span class="espl">9.000000007</span>.
 - The CW series will display <span class="cwcwd">9</span>.
 - If the result does not match, it must be a fake.
+4. Now:
+- On an original MS, subtract 8.99999 from the result. The result should be `8.63704e-06`.
+- On all calculators after MS (including revised MS and MS 2nd edition), subtract 9 from the result. The result should be <span class="espl">7.33338⁹</span>.
+  - On CW models, the result will be <span class="cwcwd">7.5528¹⁸</span>.
 
 ## Battery law
 Normally, Casio calculators use either [AA](https://wikipedia.org/wiki/AA_battery), [AAA](https://wikipedia.org/wiki/AAA_battery), or [LR44](https://wikipedia.org/wiki/LR44) batteries. One battery of one of these types has 1.5 [volts](https://wikipedia.org/wiki/Volt).
