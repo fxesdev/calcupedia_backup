@@ -64,8 +64,8 @@ On the CW series, when releasing <span class="k_cw">1</span>, <span class="cwcwd
 1. Make sure you are on the <span class="esps">COMP</span>/Calculate mode, and that the angle unit is set to degrees.
 2. Evaluate the expression <span class="espl">sin⁻(cos⁻(tan⁻(tan(cos(sin(9</span>.
 3. Check the result of the expression:<br>
-- The MS series and below will display `8.999998637`.
-- The ES, ES PLUS and EX series will display <span class="espl">9.000000007</span>.
+- The original MS series will display `8.999998637`.
+- The ES, ES PLUS, revised MS series, MS 2nd edition, ES PLUS 2nd edition, and EX series will display <span class="espl">9.000000007</span>.
 - The CW series will display <span class="cwcwd">9</span>.
 - If the result does not match, it must be a fake.
 4. Now:
