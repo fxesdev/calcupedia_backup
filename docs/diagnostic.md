@@ -91,6 +91,81 @@ Internally, the diagnostic mode locking works just like the ES PLUS 2nd edition 
 
 If you change the contrast in self-test mode, you will have to exit the self-test (without pressing <span class="k_es">W</span>) to keep the setting, or else it'll just be reset to the default (<span class="esps">11h</span>). Also, if the contrast was set outside the intended range when exiting the self-test, pressing <span class="k_es">W</span> or using the contrast menu will reset the contrast setting.
 
+<table>
+<caption>Version list
+</caption>
+<tbody><tr>
+<th>ROM version</th>
+<th>Mode</th>
+<th>Corresponding model(s)
+</th></tr>
+<tr>
+<td><span class="esps">ROM 013</span></td>
+<td><span class="esps">P0</span></td>
+<td>fx-82ES (very early version)
+</td></tr>
+<tr>
+<td rowspan="2"><span class="esps">ROM 015</span></td>
+<td><span class="esps">P0</span></td>
+<td>FC-200V
+</td></tr>
+<tr>
+<td><span class="esps">P3</span></td>
+<td>FC-100V
+</td></tr>
+<tr>
+<td><span class="esps">ROM 017</span></td>
+<td><span class="esps">P0</span></td>
+<td>fx-92 Collège 2D
+</td></tr>
+<tr>
+<td rowspan="4"><span class="esps">ROM 018</span></td>
+<td><span class="esps">P0</span></td>
+<td>fx-570ES, fx-991ES, fx-115ES
+</td></tr>
+<tr>
+<td><span class="esps">P1</span></td>
+<td>fx-370ES
+</td></tr>
+<tr>
+<td><span class="esps">P2</span></td>
+<td>fx-300ES, fx-500ES, fx-912ES
+</td></tr>
+<tr>
+<td><span class="esps">P3</span></td>
+<td>fx-82ES, fx-83ES, fx-85ES, fx-350ES
+</td></tr>
+<tr>
+<td><span class="esps">ROM 021</span></td>
+<td><span class="esps">P3</span></td>
+<td>fx-82ES (special version)
+</td></tr></tbody></table>
+
+#### FC-x00V 2nd edition
+The FC-100V 2nd edition and FC-200V 2nd edition are possibly the only ES 2nd edition models that have an ES PLUS style diagnostic mode and have a proper version screen. The version screen layout is the exact same as the ES PLUS models.
+
+<table>
+<caption>Version + checksum list
+</caption>
+<tbody><tr>
+<th>Version</th>
+<th>Revision</th>
+<th>Checksum</th>
+<th>Corresponding model(s)
+</th></tr>
+<tr>
+<td><span class="esps">CY-200</span></td>
+<td>A</td>
+<td><span class="esps">8687</span></td>
+<td>FC-100V 2nd edition
+</td></tr>
+<tr>
+<td><span class="esps">CY-201</span></td>
+<td>A</td>
+<td><span class="esps">868C</span></td>
+<td>FC-200V 2nd edition
+</td></tr></tbody></table>
+
 ### ES PLUS series
 *Not to be confused with the [ES series self-test mode](#es-series) or the [ES PLUS 2nd edition series self-test mode](#es-plus-2nd edition-series).*
 {: .hatnote }
@@ -164,12 +239,16 @@ There's no change to the key test in the ES PLUS series models.
 <td><span class="esps">GY-454</span></td>
 <td>A</td>
 <td><span class="esps">F929</span></td>
-<td rowspan="2">fx-570ES PLUS
+<td rowspan="3">fx-570ES PLUS
 </td></tr>
 <tr>
-<td><span class="esps">GY454X</span></td>
+<td rowspan="2"><span class="esps">GY454X</span></td>
 <td>E</td>
 <td><span class="esps">8929</span>
+</td></tr>
+<tr>
+<td>F</td>
+<td><span class="esps">A33E</span>
 </td></tr>
 <tr>
 <td rowspan="2"><span class="esps">GY-455</span></td>
@@ -215,7 +294,7 @@ There's no change to the key test in the ES PLUS series models.
 <tr>
 <td><span class="esps">GY459X</span></td>
 <td>E</td>
-<td><i>Unknown</i>
+<td><span class="esps">E501</span>
 </td></tr>
 <tr>
 <td><span class="esps">GY-460</span></td>
@@ -348,7 +427,7 @@ There's no change to the key test in the ES PLUS series models.
 <tr>
 <td><span class="esps">LY721X</span></td>
 <td>A</td>
-<td><i>Unknown</i></td>
+<td><span class="esps">59CB</span></td>
 <td>fx-82DE PLUS
 </td></tr>
 <tr>
@@ -393,6 +472,33 @@ There's no change to the key test in the ES PLUS series models.
 <tr>
 <td>B</td>
 <td><span class="esps">2D4E</span>
+</td></tr>
+<tr>
+<td><span class="esps">CY220X</span></td>
+<td>A</td>
+<td><span class="esps">F248</span></td>
+<td>fx-82LA PLUS
+</td></tr>
+<tr>
+<td><span class="esps">CY221X</span></td>
+<td colspan="2"><i>No known revisions</i></td>
+<td>fx-350LA PLUS
+</td></tr>
+<tr>
+<td><span class="esps">CY222X</span></td>
+<td colspan="2"><i>No known revisions</i></td>
+<td>fx-570LA PLUS
+</td></tr>
+<tr>
+<td><span class="esps">CY223X</span></td>
+<td colspan="2"><i>No known revisions</i></td>
+<td>fx-991LA PLUS
+</td></tr>
+<tr>
+<td><span class="esps">CY225X</span></td>
+<td>A</td>
+<td><span class="esps">0B61</span></td>
+<td>fx-87DE PLUS
 </td></tr></tbody></table>
 
 #### ES PLUS 2nd edition series
@@ -575,7 +681,7 @@ The checksum is displayed immediately if this screen is accessed through the deb
 <li>The contrast setting in self-test mode has a range of <span class="cwxd">00h</span> - <span class="cwxd">2Ah</span>, while the intended range is <span class="cwxd">0Bh</span> -<span class="cwxd">1Fh</span>. The default setting is 14h. The contrast resetting still applies.</li>
 </ul>
 
-<table class="wikitable">
+<table>
 <caption>Version + checksum list
 </caption>
 <tbody><tr>
@@ -586,7 +692,8 @@ The checksum is displayed immediately if this screen is accessed through the deb
 </th></tr>
 <tr>
 <td><span class="cwxd">CY-230</span></td>
-<td colspan="2"><i>No known revisions</i></td>
+<td>E</td>
+<td><span class="cwxd">3C39</span></td>
 <td>fx-82EX
 </td></tr>
 <tr>
@@ -607,7 +714,7 @@ The checksum is displayed immediately if this screen is accessed through the deb
 </td></tr>
 <tr>
 <td>F</td>
-<td><i>Unknown</i>
+<td><span class="cwxd">9018</span>
 </td></tr>
 <tr>
 <td rowspan="3"><span class="cwxd">CY-235</span></td>
@@ -698,7 +805,7 @@ The checksum is displayed immediately if this screen is accessed through the deb
 <tr>
 <td><span class="cwxd">CY-246</span></td>
 <td>A</td>
-<td><i>Unknown</i></td>
+<td><span class="cwxd">3D35</span></td>
 <td>fx-92 Spéciale Collège
 </td></tr>
 <tr>
@@ -771,10 +878,14 @@ The checksum is displayed immediately if this screen is accessed through the deb
 <td>fx-570AR X
 </td></tr>
 <tr>
-<td><span class="cwxd">CY-259</span></td>
+<td rowspan="2"><span class="cwxd">CY-259</span></td>
 <td>A</td>
 <td><span class="cwxd">097B</span></td>
-<td>fx-991AR X
+<td rowspan="2">fx-991AR X
+</td></tr>
+<tr>
+<td>E</td>
+<td><span class="cwxd">86E5</span>
 </td></tr>
 <tr>
 <td><span class="cwxd">CY-266</span></td>
@@ -817,7 +928,8 @@ The checksum is displayed immediately if this screen is accessed through the deb
 </td></tr>
 <tr>
 <td><span class="cwxd">CY-273</span></td>
-<td colspan="2"><i>No known revisions</i></td>
+<td>F</td>
+<td><span class="cwxd">ECE5</span></td>
 <td>fx-991LA X
 </td></tr>
 <tr>
@@ -873,7 +985,8 @@ The checksum is displayed immediately if this screen is accessed through the deb
 </td></tr>
 <tr>
 <td><span class="cwxd">CY-214</span></td>
-<td colspan="2"><i>No known revisions</i></td>
+<td>A</td>
+<td><span class="cwxd">00D3</span></td>
 <td>fx-85GT X
 </td></tr>
 <tr>
@@ -1025,7 +1138,7 @@ You can verify the version and checksum with the table below.</li>
 <tr>
 <td><span class="cwcwd">EY-021</span></td>
 <td>B</td>
-<td><i>Unknown</i></td>
+<td><span class="cwcwd">25C6</span></td>
 <td>fx-82NL
 </td></tr>
 <tr>
@@ -1081,7 +1194,7 @@ You can verify the version and checksum with the table below.</li>
 <tr>
 <td><span class="cwcwd">EY-031</span></td>
 <td>A</td>
-<td><i>Unknown</i></td>
+<td><span class="cwcwd">4A91</span></td>
 <td>fx-JP900CW
 </td></tr>
 <tr>
@@ -1104,7 +1217,7 @@ You can verify the version and checksum with the table below.</li>
 <tr>
 <td><span class="cwcwd">EY-039</span></td>
 <td>C</td>
-<td><i>Unknown</i></td>
+<td><span class="cwcwd">7768</span></td>
 <td>fx-991LA CW
 </td></tr>
 <tr>
